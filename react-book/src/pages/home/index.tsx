@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./components/header";
-
+import ErrorBlock from "@/base/error-block";
+import Loading from "@/components/loading";
 import styles from './index.module.scss';
 import { useRequest } from "@/hooks/useRequest";
 import api from "./api";
@@ -10,17 +11,18 @@ const Home: React.FC = () => {
     console.log(data, error, response);
 
     if(error) {
-        return <>error block</>
+        return <ErrorBlock />
     }
 
     if(!data) {
-        return <>loading block</>
+        return <Loading />
     }
     
     return (
         <div className={styles.home}>
             <Header/>
             Home
+            
         </div>
     )
     
