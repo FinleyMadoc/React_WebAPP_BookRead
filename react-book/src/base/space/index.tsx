@@ -23,8 +23,39 @@ export interface SpaceProps {
 
 const classPrefix = `ygm-space`;
 
+const formatGap = (gap: string | number) => (typeof gap === 'number' ? `${gap}px` : gap);
+
 const Space: React.FC<SpaceProps> = (props) => {
-    return <div></div>
+    const style = React.useMemo(() => {
+        if(props.gap) {
+            if(Array.isArray(props.gap)) {
+                const [gapH, gapV] = props.gap;
+                return {
+                    '--gap-vertical': formatGap(gapV),
+                    '--gap-horizontal': formatGap(gapH)
+                }
+            }
+            return {'--gap':formatGap(props.gap)}
+        }
+
+        return {};
+    }, [props.gap])
+
+    return <div className={cx(classPrefix, {
+        [`${classPrefix}-wrap`]:props.wrap,
+        [`${classPrefix}-block`]:props.block,
+        [`${classPrefix}-${props.direction}`]:true,
+        [`${classPrefix}-aline-${props.align}`]:!!props.align,
+        [`${classPrefix}-${props.justify}`]:!!props.justify,
+    })}
+        onClick={props.onClick}
+        style={style as React.CSSProperties}
+    >
+        {React.Children.map(props.children, (child) => {
+            return child != null && child !== undefined && <div className={`${classPrefix}-item`}>{child}</div>
+        })}
+
+    </div>
 }
 
 Space.defaultProps = {

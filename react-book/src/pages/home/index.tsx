@@ -6,11 +6,11 @@ import styles from './index.module.scss';
 import { useRequest } from '@/hooks/useRequest';
 import api from './api';
 
-import { Space } from '@taoyage/react-mobile-ui';
+// import { Space } from '@taoyage/react-mobile-ui';
 import { px2rem } from '@/utils/unit';
 import { IHomeData } from '@/pages/home/types';
 // import { Swiper } from '@taoyage/react-mobile-ui';
-import { ErrorBlock, Swiper } from '@/base';
+import { ErrorBlock, Swiper, Space  } from '@/base';
 
 const Home: React.FC = () => {
   const { data, error } = useRequest<IHomeData>({ url: api.getHomeData });
