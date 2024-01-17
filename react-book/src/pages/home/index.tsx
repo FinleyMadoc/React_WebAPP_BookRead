@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './components/header';
 import Navbar from './components/navbar';
 import Loading from '@/components/loading';
-import styles from './index.module.scss';
+import styles from '@/pages/home/index.module.scss';
 import { useRequest } from '@/hooks/useRequest';
 import api from './api';
 
@@ -11,6 +11,9 @@ import { px2rem } from '@/utils/unit';
 import { IHomeData } from '@/pages/home/types';
 // import { Swiper } from '@taoyage/react-mobile-ui';
 import { ErrorBlock, Swiper, Space  } from '@/base';
+import Popular from './components/popular';
+import Recommend from './components/recommend';
+import LimitedRead from './components/limitedRead';
 
 const Home: React.FC = () => {
   const { data, error } = useRequest<IHomeData>({ url: api.getHomeData });
@@ -37,6 +40,9 @@ const Home: React.FC = () => {
           })}
         </Swiper>
         <Navbar />
+        <Popular />
+        <Recommend />
+        <LimitedRead />
       </Space>
     </div>
   );
