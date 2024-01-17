@@ -15,3 +15,6 @@ export type { CardProps } from '@/base/card';
 
 export { default as Grid } from '@/base/grid';
 export type { GridProps, GridItemProps } from '@/base/grid';
+
+export { default as Countdown } from '@/base/countdown';
+export type { CountdownProps } from '@/base/countdown';

@@ -22,12 +22,27 @@ const LimitedRead: React.FC = React.memo(() => {
                 限时免费
             </div>    
             <div className={styles.divider}>|</div>
-            <Countdown time={time} format="hh:mm:ss" />
+            <Countdown time={time} format="hh:mm:ss"  numberClassName={styles.num} symbolClassName={styles.symbol}/>
         </div>
     }, [])
 
     const renderContent = () => {
-        return <div>content</div>
+        return data?.limited.map(book => (
+            <React.Fragment key={book.bookId}>
+                <Grid.Item onClick={() => navigate(`/book/${book.bookId}`)}>
+                    <BookCover src={book.coverImg} alt={book.title}/>
+                    <Space direction="vertical" gap={px2rem(6)}>
+                        <div className={styles.bookName}>
+                            {book.title}
+                        </div>
+                        <div className={styles.author}>
+                            {book.author}
+                        </div>
+                    </Space>
+
+                </Grid.Item>
+            </React.Fragment>
+        ))
     }
 
     return <div className={styles.limited}>
