@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Countdown } from "@taoyage/react-mobile-ui";
+// import { Countdown } from "@taoyage/react-mobile-ui";
 
-import { Card,Grid,Space  } from "@/base";
+import { Card,Grid,Space, Countdown  } from "@/base";
 import BookCover from "@/components/bookCover";
 import { useRequest } from "@/hooks/useRequest";
 import { IHomeData } from "../../types";

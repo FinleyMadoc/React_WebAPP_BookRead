@@ -14,6 +14,7 @@ import { ErrorBlock, Swiper, Space  } from '@/base';
 import Popular from './components/popular';
 import Recommend from './components/recommend';
 import LimitedRead from './components/limitedRead';
+import Ranking from './components/ranking';
 
 const Home: React.FC = () => {
   const { data, error } = useRequest<IHomeData>({ url: api.getHomeData });
@@ -43,6 +44,7 @@ const Home: React.FC = () => {
         <Popular />
         <Recommend />
         <LimitedRead />
+        <Ranking />
       </Space>
     </div>
   );
