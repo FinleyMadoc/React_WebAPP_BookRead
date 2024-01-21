@@ -15,7 +15,7 @@ const classPrefix = 'ygm-grid';
 
 const Grid: React.FC<GridProps> = (props) => {
     const style = React.useMemo(() => {
-        console.log("prop1111111111111111111s", props);
+        // console.log("prop1111111111111111111s", props);
         
         if(props.gap !== undefined) {
             if(Array.isArray(props.gap)) {

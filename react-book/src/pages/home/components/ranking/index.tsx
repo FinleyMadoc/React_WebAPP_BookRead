@@ -38,7 +38,7 @@ const Ranking: React.FC = React.memo(() => {
   const renderTab = () => {
     return data?.ranking.map((rank, index) => (
         <Tabs.Tab title={rank.title} key={`${index + 1}`}>
-            <Grid columns={2} gap={[0, px2rem(16)]}>
+            <Grid columns={2} gap={[0, px2rem(16)]} >
                 { renderList(rank) }
             </Grid>
         </Tabs.Tab>

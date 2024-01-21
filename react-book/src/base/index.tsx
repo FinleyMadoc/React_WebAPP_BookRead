@@ -18,3 +18,6 @@ export type { GridProps, GridItemProps } from '@/base/grid';
 
 export { default as Countdown } from '@/base/countdown';
 export type { CountdownProps } from '@/base/countdown';
+
+export { default as Image } from '@/base/image';
+export type { ImageProps } from '@/base/image';
