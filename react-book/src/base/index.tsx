@@ -21,3 +21,6 @@ export type { CountdownProps } from '@/base/countdown';
 
 export { default as Image } from '@/base/image';
 export type { ImageProps } from '@/base/image';
+
+export { default as Tabs } from '@/base/tabs';
+export type { TabsProps, TabProps } from '@/base/tabs';

@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Tabs } from '@taoyage/react-mobile-ui';
+// import { Tabs } from '@taoyage/react-mobile-ui';
 
-import { Card, Space, Grid } from '@/base';
+import { Card, Space, Grid, Tabs } from '@/base';
 
 import BookCover from '@/components/bookCover';
 import { useRequest } from '@/hooks/useRequest';
@@ -54,7 +54,9 @@ const Ranking: React.FC = React.memo(() => {
         headerClassName={styles.header}
         onHeaderClick={onHeaderClick}
       >
-        <Tabs activeKey="1" showTabLine={false} type="card"
+        <Tabs activeKey="1" 
+            showTabLine={true} 
+            // type="card"
             tabActiveClassName={styles.tabActive}
             tabListClassName={styles.tabList}
         >

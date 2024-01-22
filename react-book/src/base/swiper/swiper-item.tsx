@@ -15,6 +15,5 @@ const SwiperItem:React.FC<SwiperItemProps> = props => {
         </div>
     )
 }
-
-export default SwiperItem;
 SwiperItem.displayName = 'SwiperItem';
+export default SwiperItem;
