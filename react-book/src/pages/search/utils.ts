@@ -21,14 +21,17 @@ export const setHistory = (value: string) => {
     arr.unshift(value);
 
     storage.set(HISTORY_SEARCH_KEY, arr);
+    window.dispatchEvent(new CustomEvent('local-storage', {detail: {key: HISTORY_SEARCH_KEY}}));
 };
 
 export const deleteHistory = (val:string) => {
     const arr = storage.get(HISTORY_SEARCH_KEY);
     deleteArrItem(arr, val);
     storage.set(HISTORY_SEARCH_KEY, arr);
+    window.dispatchEvent(new CustomEvent('local-storage', {detail: {key: HISTORY_SEARCH_KEY}}));
 }
 
 export const clearHistory = () => {
     storage.remove(HISTORY_SEARCH_KEY);
+    window.dispatchEvent(new CustomEvent('local-storage', {detail: {key: HISTORY_SEARCH_KEY}}));
 }

@@ -4,8 +4,8 @@ import { SearchBar, SearchBarRef } from '@taoyage/react-mobile-ui';
 import { removeUrlParams, setUrlParams } from '@/utils/url';
 import { setHistory } from '@/pages/search/utils';
 import { useAppSelector, useAppDispatch } from '@/store';
-import { setSearchKeyword, setSearchMode } from '@/store/slice/searchSlice';
-
+// import { setSearchKeyword, setSearchMode } from '@/store/slice/searchSlice';
+import { searchActions } from '@/pages/search/store';
 const BookSearchBar: React.FC = () => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
@@ -20,20 +20,20 @@ const BookSearchBar: React.FC = () => {
         if(!value) return;
         setHistory(value);
         setUrlParams([['keyword', value]],  '/search');
-        dispatch(setSearchKeyword(value))
+        dispatch(searchActions.setSearchKeyword(value))
     }
 
     const onClear = () => {
         removeUrlParams(['keyword'], '/search');
-        dispatch(setSearchKeyword(''));
-        dispatch(setSearchMode(false));
+        dispatch(searchActions.setSearchKeyword(''));
+        dispatch(searchActions.setSearchMode(false));
     }
 
     const onChange = (value:string) => {
         if(!value) {
             removeUrlParams(['keyword'], '/search');
-            dispatch(setSearchKeyword(''));
-            dispatch(setSearchMode(false));
+            dispatch(searchActions.setSearchKeyword(''));
+            dispatch(searchActions.setSearchMode(false));
         }
     }
 
@@ -43,7 +43,8 @@ const BookSearchBar: React.FC = () => {
 
     React.useEffect(() => {
         if(searchKeyword) {
-            dispatch(setSearchMode(true));
+            dispatch(searchActions.setSearchMode(true));
+            searchRef.current?.setValue(searchKeyword);
         }
     }, [dispatch, searchKeyword])
 

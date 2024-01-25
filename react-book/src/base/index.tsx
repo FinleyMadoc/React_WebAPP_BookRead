@@ -24,3 +24,9 @@ export type { ImageProps } from '@/base/image';
 
 export { default as Tabs } from '@/base/tabs';
 export type { TabsProps, TabProps } from '@/base/tabs';
+
+export { default as NavBar } from '@/base/nav-bar';
+export type { NavBarProps } from '@/base/nav-bar';
+
+export { default as Sidebar } from '@/base/sidebar';
+export type { SidebarProps } from '@/base/sidebar';

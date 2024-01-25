@@ -1,29 +1,36 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { Card, Space, Grid, Tabs } from '@/base';
-
-import BookCover from "@/components/bookCover";
-import { useRequest } from "@/hooks/useRequest";
-
-import api from '@/pages/home/api';
-import { IRanking, IHomeData } from "../home/types";
-import { px2rem } from "@/utils/unit";
+import React from 'react';
 import styles from './index.module.scss';
+import RankingHeader from '@/pages/ranking/components/header';
+import RankingContent from '@/pages/ranking/components/content';
+import { createReducer } from '@/pages/ranking/store';
+import { useReducer } from '@/store';
 
+import { useRequest } from '@/hooks/useRequest';
+import api from '@/pages/ranking/api';
+import { ErrorBlock } from '@/base';
+import Loading from '@/components/loading';
 
 const Ranking: React.FC = React.memo(() => {
-    const navigate = useNavigate();
-    const { data } = useRequest<IHomeData>({ url: api.getHomeData })
+  const { data, error } = useRequest({ url: api.ranking });
+  const { reducer } = React.useMemo(() => createReducer('ranking'), []);
+  useReducer(reducer);
 
-    const renderList = (rank: IRanking) => {
-        return rank.books.map((book) => (
-            <React.Fragment key={book.bookId}>
-                
-            </React.Fragment>
-        ))
-    }
+  if(error) {
+    return <ErrorBlock />
+  }
 
-    return <>Ranking</>
-})
+  if(!data) {
+    return <Loading />
+  }
+
+  
+
+  return (
+    <div className={styles.ranking}>
+      <RankingHeader />
+      <RankingContent />
+    </div>
+  );
+});
 
 export default Ranking;

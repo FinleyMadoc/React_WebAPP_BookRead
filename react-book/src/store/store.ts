@@ -1,20 +1,18 @@
-import { configureStore, Middleware } from "@reduxjs/toolkit"; 
+import { Middleware } from "@reduxjs/toolkit"; 
+import configStore from "@/store/configStore";
 
 import counterReducer from '@/store/slice/counterSlice';
-import searchReducer from '@/store/slice/searchSlice';
+// import searchReducer from '@/store/slice/searchSlice';
 
 
 const middleware:Middleware[] = [];
 
 const rootReducer = {
     counter: counterReducer,
-    search: searchReducer
+    // search: searchReducer
 };
 
-export const store = configureStore({
-    reducer: rootReducer,
-    middleware,
-});
+export const store = configStore(rootReducer, middleware);
 
 export type AppState = ReturnType<typeof store.getState>;
 export type AppDispath = typeof store.dispatch;

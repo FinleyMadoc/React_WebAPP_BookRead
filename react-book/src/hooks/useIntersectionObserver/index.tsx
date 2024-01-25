@@ -8,7 +8,7 @@ const  useIntersectionObserver = (targetRef: React.RefObject<Element | null>,
      {threshold = 0, root=null, rootMargin="0%",freezeOnceVisible=false}:Options)  => {
         const [entry, setEntry] = React.useState<IntersectionObserverEntry>();
         const frozen = entry?.isIntersecting && freezeOnceVisible;
-        console.log("entry?.isIntersecting", entry?.isIntersecting);
+        // console.log("entry?.isIntersecting", entry?.isIntersecting);
         
         React.useEffect(() => {
             const element = targetRef.current;
