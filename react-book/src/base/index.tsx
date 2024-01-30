@@ -30,3 +30,6 @@ export type { NavBarProps } from '@/base/nav-bar';
 
 export { default as Sidebar } from '@/base/sidebar';
 export type { SidebarProps } from '@/base/sidebar';
+
+export { default as InfiniteScroll } from '@/base/infinite-scroll';
+export type { InfiniteScrollProps } from '@/base/infinite-scroll';
