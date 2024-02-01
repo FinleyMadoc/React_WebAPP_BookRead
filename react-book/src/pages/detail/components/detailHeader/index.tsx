@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Divider } from '@/base';
+
 import DetailBookCatalog from './components/detailBookCatalog';
 import DetailBookInfo from './components/detailBookInfo';
 import DetailNavBar from './components/detailNavBar';
@@ -10,6 +12,7 @@ const DetailHeader: React.FC = React.memo(() => {
     return <div className={styles.header}>
         <DetailNavBar />
         <DetailBookInfo />
+        <Divider />
         <DetailBookCatalog />
     </div>
 })

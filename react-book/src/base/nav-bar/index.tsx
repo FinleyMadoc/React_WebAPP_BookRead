@@ -20,7 +20,7 @@ const classPrefix = 'ygm-nav-bar';
 
 const NavBar: React.FC<NavBarProps> = (props) => {
   return (
-    <div className={classPrefix}>
+    <div className={classPrefix} style={props.style}>
       <div className={`${classPrefix}-left`} onClick={props.onBack}>
         {props.leftArrow && (
           <div className={`${classPrefix}-left-icon`}>

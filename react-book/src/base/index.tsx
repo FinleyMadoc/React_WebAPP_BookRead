@@ -33,3 +33,15 @@ export type { SidebarProps } from '@/base/sidebar';
 
 export { default as InfiniteScroll } from '@/base/infinite-scroll';
 export type { InfiniteScrollProps } from '@/base/infinite-scroll';
+
+export { default as Ellipsis } from '@/base/ellipsis';
+export type { EllipsisProps } from '@/base/ellipsis';
+
+export { default as Divider } from '@/base/divider';
+export type { DividerProps } from '@/base/divider';
+
+export { default as Popup } from '@/base/popup';
+export type { PopupProps } from '@/base/popup';
+
+export { default as Mask } from '@/base/mask';
+export type { MaskProps } from '@/base/mask';
