@@ -4,7 +4,7 @@ import {useSpring,animated} from '@react-spring/web';
 
 // import { Mask } from "@taoyage/react-mobile-ui";
 import Mask from "../mask";
-
+import useScrollLock from '@/hooks/useScrollLock';
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 import './styles/index.scss';
 
@@ -31,6 +31,8 @@ export interface PopupProps {
 const classPrefix = 'ygm-popup';
 
 const Popup: React.FC<PopupProps> = (props) => {
+    useScrollLock(props.visible);
+
     const {percent} = useSpring({
         percent: props.visible ? 0 : 100,
         config: {

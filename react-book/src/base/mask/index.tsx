@@ -2,7 +2,7 @@ import React from 'react';
 import { useSpring, animated } from '@react-spring/web';
 
 import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
-
+import useScrollLock from '@/hooks/useScrollLock';
 import './styles/index.scss';
 
 export interface MaskProps {
@@ -17,6 +17,8 @@ const classPrefix = 'ygm-mask';
 
 const Mask: React.FC<MaskProps> = (props) => {
     const [active, setActive] = React.useState<boolean>(props.visible);
+
+    useScrollLock(props.visible);
 
     const {opacity} = useSpring({
         opacity: props.visible? 1 : 0,
