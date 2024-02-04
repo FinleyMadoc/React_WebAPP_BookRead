@@ -28,8 +28,8 @@ const Detail: React.FC = () => {
     return (
         <>
             <DetailHeader />
-            {/* <DetailContent /> */}
-            {/* <DetailFooter /> */}
+            <DetailContent />
+            <DetailFooter />
         </>
     )
 }
