@@ -45,3 +45,9 @@ export type { PopupProps } from '@/base/popup';
 
 export { default as Mask } from '@/base/mask';
 export type { MaskProps } from '@/base/mask';
+
+export { default as Toast } from '@/base/toast';
+export type { ToastProps, ToastShowProps } from '@/base/toast';
+
+export { default as Button } from '@/base/button';
+export type { ButtonProps } from '@/base/button';

@@ -1,4 +1,4 @@
-import { configureStore, Middleware, Reducer } from "@reduxjs/toolkit";
+import { configureStore, getDefaultMiddleware, Middleware, Reducer } from "@reduxjs/toolkit";
 import createReducerManager from "./createReducerManger";
 
 export interface IReducers {
@@ -10,7 +10,7 @@ const configStore = (reducers: IReducers, middleware: Middleware[]) => {
 
     const internalStore= configureStore({
         reducer: reducerManager.reduce,
-        middleware,
+        middleware:(getDefaultMiddleware) => getDefaultMiddleware().concat(middleware),
     })
 
     type TStore = typeof internalStore;

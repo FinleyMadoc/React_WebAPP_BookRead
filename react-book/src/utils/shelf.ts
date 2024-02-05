@@ -15,10 +15,11 @@ export const isShelf = (bookId: string) => {
 
 export const setShelf = (value: IBookInfo): string => {
     let arr:IBookInfo[] = storage.get('shelf') || [];
-    const index = arr.findIndex((item) => item.bookId === value.bookId);
 
-    if(index !== -1) {
-        arr.slice(index, 1);
+    const index = arr.findIndex((item) => item.bookId === value.bookId);
+    
+    if(index != -1) {
+        arr.splice(index, 1);
         storage.set('shelf', arr);
         return '已从书架中移除';
     }

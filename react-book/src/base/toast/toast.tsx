@@ -22,5 +22,47 @@ export interface ToastProps {
 const classPrefix = 'ygm-toast';
 
 const Toast: React.FC<ToastProps> = (props) => {
-    
+    const iconElement = React.useMemo(() => {
+        if(props.icon === null || props.icon === undefined) return null;
+        
+        switch(props.icon) {
+            case 'success': 
+                return <CheckOutline />
+            case 'fail':
+                return <CloseOutline />
+            case 'loading':
+                return <SpinnerLoading color="white"/>
+            default:
+                return props.icon;
+        }
+    }, [props.icon]);
+
+    React.useEffect(() => {
+        const timer = window.setTimeout(() => {
+            props.unmount?.();
+        }, props.duration);
+
+        return () => clearTimeout(timer);
+    }, [props.unmount, props.duration]);
+
+    React.useEffect(() => {
+        return () => {
+            props.afterClose?.();
+        }
+    }, [props.afterClose]);
+
+    return <div className={classPrefix}>
+        <div className={cx(`${classPrefix}-main`, props.icon? `${classPrefix}-marin-icon`:`${classPrefix}-main-text`)}>
+            {iconElement && <div className={`${classPrefix}-icon`}>{iconElement}</div>}
+            <div className={`${classPrefix}-text`}>{props.content}</div>
+        </div>
+    </div>
 }
+
+Toast.defaultProps = {
+    duration: 2000
+}
+
+Toast.displayName = "Toast";
+
+export default Toast;

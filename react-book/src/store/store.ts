@@ -1,9 +1,8 @@
-import { Middleware } from "@reduxjs/toolkit"; 
+import { Middleware, ThunkAction, Action, ThunkDispatch, AnyAction } from "@reduxjs/toolkit"; 
 import configStore from "@/store/configStore";
 
 import counterReducer from '@/store/slice/counterSlice';
 // import searchReducer from '@/store/slice/searchSlice';
-
 
 const middleware:Middleware[] = [];
 
@@ -15,4 +14,5 @@ const rootReducer = {
 export const store = configStore(rootReducer, middleware);
 
 export type AppState = ReturnType<typeof store.getState>;
-export type AppDispath = typeof store.dispatch;
+export type AppDispath = typeof store.dispatch & ThunkDispatch<AppState, unknown, AnyAction>;
+export type AppThunk<ReturnType> = ThunkAction<ReturnType, AppState, unknown, Action<string>>;
