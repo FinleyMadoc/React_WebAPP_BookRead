@@ -51,3 +51,5 @@ export type { ToastProps, ToastShowProps } from '@/base/toast';
 
 export { default as Button } from '@/base/button';
 export type { ButtonProps } from '@/base/button';
+
+export { default as Dialog } from '@/base/dialog';

@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { InfiniteScroll } from "@taoyage/react-mobile-ui";
+// import { InfiniteScroll } from "@taoyage/react-mobile-ui";
+import { InfiniteScroll } from "@/base";
 import { NavBar, Grid, Space, ErrorBlock } from "@/base";
 
 import BookCover from "@/components/bookCover";
