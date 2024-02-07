@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './index.module.scss';
 import BookCover from '../bookCover';
 import { Space } from '@/base';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 interface BookCatalogListProps {
   catalogList: string[];
@@ -11,12 +11,14 @@ interface BookCatalogListProps {
   title: string;
   author: string;
   bookId: string;
+  onClickChapter?: (chapter: number) => void;
 }
 
 const BookCatalogList: React.FC<BookCatalogListProps> = React.memo((props) => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const onGoChapter = (index: number) => {
-        navigate(`/book/${props.bookId}/${index + 1}`)
+        // navigate(`/book/${props.bookId}/${index + 1}`);
+      props?.onClickChapter?.(index + 1);
     }
   
     return (

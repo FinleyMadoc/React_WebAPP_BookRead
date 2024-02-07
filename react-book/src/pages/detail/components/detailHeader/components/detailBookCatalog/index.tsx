@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Space, Popup } from '@/base';
 // import { Popup } from '@taoyage/react-mobile-ui';
 import { useRequest } from '@/hooks/useRequest';
@@ -12,7 +12,7 @@ import styles from './index.module.scss';
 
 const DetailBookCatalog: React.FC = React.memo(() => {
     const [visible, setVisible] = React.useState<boolean>(false);
-
+    const navigate = useNavigate();
     const id = useParams().id as string;
     const { data } = useRequest<IBookInfo>({ url: api.getBook(id) });
 
@@ -26,6 +26,10 @@ const DetailBookCatalog: React.FC = React.memo(() => {
 
     const onCancel = () => {
         setVisible(false);
+    }
+
+    const onClickChapter = (chapter:number) => {
+        navigate(`/book/${data!.bookId}/${chapter}`, {replace: true});
     }
 
     return <div className={ styles.catalog }>
@@ -55,6 +59,7 @@ const DetailBookCatalog: React.FC = React.memo(() => {
                 title={data!.title}
                 imgUrl={data!.coverImg}
                 bookId={data!.bookId}
+                onClickChapter={onClickChapter}
             />
         </Popup>
     </div>

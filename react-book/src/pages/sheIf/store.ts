@@ -4,7 +4,7 @@ import { IBookInfo } from "@/types/book";
 import { AppThunk } from "@/store/store";
 
 interface IActions {
-    setEditMode: ActionCreatorWithPayload<boolean, string>;
+    setEditMode: ActionCreatorWithPayload<boolean, string>; //boolean: 相当于传值的类型， string： 就是定义type的类型 
     setSelectedBook: (book: IBookInfo) => AppThunk<void>;
     setSelectedGroup: (groupName: string) => AppThunk<void>;
     clearSelectedBook: ActionCreatorWithPayload<IBookInfo[], string>;

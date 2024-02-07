@@ -30,7 +30,7 @@ const RankingBookList: React.FC<RankingBookListProps> = React.memo((props) => {
     }
 
     return (<div className={styles.rankingBookList}>
-        <Grid columns={1} gap={px2rem(24)}>
+        <Grid columns={1} gap={px2rem(24)} key={props.id}>
             {data?.map((book) => (
                 <Grid.Item key={book.bookId} onClick={() => navigate(`/book/${book.bookId}`)}>
                     <Space >
