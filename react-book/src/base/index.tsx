@@ -53,3 +53,13 @@ export { default as Button } from '@/base/button';
 export type { ButtonProps } from '@/base/button';
 
 export { default as Dialog } from '@/base/dialog';
+
+export { default as Slider } from '@/base/slider';
+export type { SliderProps } from '@/base/slider';
+
+export type { InputProps, InputRef } from '@/base/input';
+export { default as Input } from '@/base/input';
+
+export type { SearchBarProps, SearchBarRef } from '@/base/search-bar';
+export { default as SearchBar } from '@/base/search-bar';
+

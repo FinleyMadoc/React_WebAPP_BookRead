@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 
 import { Popup, Grid, Toast, Dialog  } from '@/base';
-import { Input, InputRef } from '@taoyage/react-mobile-ui';
+import { Input, InputRef } from '@/base';
 import useReadLocalStorage from '@/hooks/useReadLocalStorage';
 import styles from './index.module.scss';
 import { useAppSelector, useAppDispatch } from '@/store';

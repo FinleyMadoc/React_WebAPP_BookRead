@@ -18,6 +18,7 @@
     "antd-mobile-icons": "^0.3.0",
     "axios": "^0.27.2",
     "classnames": "^2.5.1",
+    "madoc-react-mobileui": "^1.0.1",
     "query-string": "^7.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

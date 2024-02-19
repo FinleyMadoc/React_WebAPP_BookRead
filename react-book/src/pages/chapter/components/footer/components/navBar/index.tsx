@@ -20,6 +20,14 @@ const NavBar: React.FC = React.memo(() => {
         dispatch(chapterActions.setProgressBarVisible(true));
     }
 
+    const onSetting = () => {
+        dispatch(chapterActions.setSettingBarVisible(true));
+    }
+
+    const onNightTheme = () => {
+        dispatch(chapterActions.setNightTheme(!nightTheme));
+    }
+
     return  <Popup position="bottom" visible={footerVisible} mask={false}>
         <div className={styles.navBar}>
             <Grid columns={4}>
@@ -37,14 +45,14 @@ const NavBar: React.FC = React.memo(() => {
                     <div className={styles.name}>进度</div>
                 </div>
 
-                <div className={styles.item}>
+                <div className={styles.item} onClick={onSetting}>
                     <div className={styles.icon}>
                         <i className="icon-cog"/>
                     </div>
                     <div className={styles.name}>设置</div>
                 </div>
 
-                <div className={styles.item}>
+                <div className={styles.item} onClick={onNightTheme}>
                     <div className={styles.icon}>
                         {nightTheme ? <i className="icon-sun"/> : <i className="icon-brightness-contrast"/>}
                     </div>

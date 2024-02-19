@@ -52,7 +52,7 @@ const Space: React.FC<SpaceProps> = (props) => {
         style={style as React.CSSProperties}
     >
         {React.Children.map(props.children, (child) => {
-            return child != null && child !== undefined && <div className={`${classPrefix}-item`}>{child}</div>
+            return child !== null && child !== undefined && <div className={`${classPrefix}-item`}>{child}</div>
         })}
 
     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { SearchBar, SearchBarRef } from '@taoyage/react-mobile-ui';
+import { SearchBar, SearchBarRef } from '@/base';
 import { removeUrlParams, setUrlParams } from '@/utils/url';
 import { setHistory } from '@/pages/search/utils';
 import { useAppSelector, useAppDispatch } from '@/store';

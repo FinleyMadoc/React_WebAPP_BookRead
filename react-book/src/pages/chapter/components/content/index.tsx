@@ -46,6 +46,7 @@ const ChapterContent: React.FC = () => {
         dispatch(chapterActions.setHeaderVisible(!headerVisible));
         dispatch(chapterActions.setProgressBarVisible(false));
         dispatch(chapterActions.setFooterVisible(!footerVisible));
+        dispatch(chapterActions.setSettingBarVisible(false))
     }
 
     const onPrev = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {

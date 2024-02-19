@@ -5,7 +5,9 @@ import cx from 'classnames'
 import { useRequest } from '@/hooks/useRequest';
 import api from '@/pages/detail/api';
 import { IBookInfo } from '@/types/book';
-import { Toast, Button } from '@/base';
+// import { Toast, Button } from '@/base';
+
+import { Toast, Button } from 'madoc-react-mobileui';
 
 import { isShelf, setShelf } from '@/utils/shelf';
 
