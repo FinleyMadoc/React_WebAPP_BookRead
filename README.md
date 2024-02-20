@@ -19,20 +19,20 @@
 ### 截图
 
 - 首页
-![](screenshot/HomePage.jpg)
+<img src="screenshot/HomePage.jpg" width="200">
 
 - 分类
-![](screenshot/Rank.jpg)
-![](screenshot/Category.jpg)
+<img src="screenshot/Rank.jpg" width="200">
+<img src="screenshot/Category" width="200">
 
 - 搜索
-![](screenshot/Search.jpg)
+<img src="screenshot/Search.jpg" width="200">
 
 - 书籍分组
-![](screenshot/Group.jpg)
+<img src="screenshot/Group.jpg" width="200">
 
 - 详情和阅读器
-![](screenshot/BookDetail.jpg)
-![](screenshot/BookDetail_Directory.jpg)
-![](screenshot/Reader.jpg)
-![](screenshot/Schedule.jpg)
+<img src="screenshot/BookDetail.jpg" width="200">
+<img src="screenshot/BookDetail_Directory.jpg" width="200">
+<img src="screenshot/Reader.jpg" width="200">
+<img src="screenshot/Schedule.jpg" width="200">
